@@ -9,8 +9,18 @@ A Social Networking Website made as a college project. There are lot of function
 * Follow/Unfollow.
 * View Profile.
 
-![alt tag](https://raw.githubusercontent.com/DanishShah/Socialize/main/Socialize/login.png)
-![Alt text](/master/main/Socialize/signup.png?raw=true "Sign Up")
-![Alt text](/master/main/Socialize/suggestions.png?raw=true "Suggestions")
-![Alt text](/master/main/Socialize/news_feed.png?raw=true "News Feed")
-![Alt text](/master/main/Socialize/profile.png?raw=true "Profile")
+# Screenshots
+* Login
+<img src="https://github.com/DanishShah/Socialize/blob/master/main/Socialize/login.png"/>
+
+* Sign Up
+<img src="https://github.com/DanishShah/Socialize/blob/master/main/Socialize/sign_up.png"/>
+
+* Suggestions
+<img src="https://github.com/DanishShah/Socialize/blob/master/main/Socialize/suggestions.png"/>
+
+* NewsFeed
+<img src="https://github.com/DanishShah/Socialize/blob/master/main/Socialize/news_feed.png"/>
+
+* Profile
+<img src="https://github.com/DanishShah/Socialize/blob/master/main/Socialize/profile.png"/>
