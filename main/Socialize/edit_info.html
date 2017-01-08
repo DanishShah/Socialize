@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Socialize</title>
+
+		<script src="https://use.fontawesome.com/ce2f362aa8.js"></script>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+		<script type="text/javascript">
+			function validateProfile(){
+				var dp_pic = document.getElementById("chooser");
+				var dp_name = document.getElementById("dp_name");
+				var bio = document.getElementById("bio");
+
+				console.log(dp_name.value);
+
+				if (dp_pic.value != null && dp_name.value != "" && bio.value != "") {
+					document.getElementById("edit_form").action = "/Socialize/include/sign_up.php";
+					return true;
+				}else{
+					if (dp_name.value == "") {
+						dp_name.style.backgroundColor = "#ff8a80";
+					}
+					if (bio.value == "") {
+						bio.style.backgroundColor = "#ff8a80";	
+					}
+					return false;
+				}
+			}
+			
+		</script>
+
+		
+	<style>
+		:root{
+			
+			--100: #FAFAFA;
+			--200: #F5F5F5;
+			--300: #EEEEEE;
+			--400: #E0E0E0;
+			--500: #616161;
+			--600: #212121;
+			
+		}
+		body{
+			background-color: var(--100);
+			padding: 0 ;
+			margin: 0 ;			
+		}
+
+		a{
+			text-decoration: none;
+			font-style: none;
+		}	
+		
+		#toolbar{	
+			position: fixed;		
+			overflow: hidden;
+			width: 100%;
+			list-style-type: none;
+			background-color: var(--200);
+			padding: 0;
+			margin: 0;
+			display: block;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+		}
+
+		#title{
+			float:left;
+			padding: 5px 20px;
+			font-family: 'Pacifico', cursive;
+			font-size: 30px;	
+			color: var(--500);
+		}		
+
+		#container{		
+			width: 100%;
+			max-width: 600px;
+			margin: auto;
+		}
+
+		#form{
+			position: absolute;
+			margin-top: 100px;
+			margin-bottom: 100px;
+			padding: 50px;
+			width: 100%;
+			max-width: 600px;
+			background-color: var(--200);
+			border-radius: 3px;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+		}
+
+		#prof_pic{
+			width: 200px;
+			height: 200px;			
+			border-radius: 50%;
+		}
+
+		#chooser{
+			width: 144.69px;
+			height: 34px;
+			opacity: 0;
+			position: absolute;
+			display: inline-block;
+		}
+
+		#chooser_ph{
+			border: 2px solid var(--500);
+			border-radius: 5px;
+			padding: 5px;
+			display: inline-block;
+			font-size: 18px;
+			margin: 0;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		#chooser_ph:hover{
+			background-color: var(--500);
+			color: #fff;
+			transition-duration: 0.4s;
+		}
+
+		input[type="text"], textarea{
+			background-color: var(--100);
+			color: var(--500);
+		}
+
+		input[type="password"], textarea{
+			background-color: var(--100);
+		}
+		
+		.in{
+			border: none;
+			font-family: 'Open Sans', sans-serif;
+			padding: 10px;
+			width: 300px;
+			border-radius: 5px;
+			color: var(--500);
+		}
+
+		.in[placeholder]{
+			color: var(--400);
+			font-family: 'Open Sans', sans-serif;
+		}	
+
+		#save{
+			background-color: var(--500);
+			font-family: 'Open Sans', sans-serif;
+			font-size: 16px;
+			color: var(--100);
+			border: none;
+			padding: 3px;
+			width: 100px;
+			height: 40px;
+			border-radius: 0px;
+		}	
+
+		</style>
+</head>
+<body>
+
+	<section>
+		
+		<main id="container">
+			
+			<div id="form">
+				<form id="edit_form" method="post" enctype="multipart/form-data">
+					<center>
+					<div>
+						<img id="prof_pic" src="prof_placeholder.png"><br><br>
+						<div>
+							<input id="chooser" type="file" name="prof_pic" onchange="handleFileSelect(this)">
+							<p id="chooser_ph">Choose a picture</p>
+
+							<script type="text/javascript">
+									function handleFileSelect(evt) {
+										if (evt.target.files != null) {
+						       				var file = evt.target.files;
+						       			}
+						       			if (file) {
+							       			var f = file[0];
+							        		var reader = new FileReader();
+									
+							          		reader.onload = (function(theFile) {
+							            		return function(e) {
+							            		document.getElementById('prof_pic').src = e.target.result;
+							            		document.getElementById('prof_pic').style.boxShadow = "0 2px 2px 0 rgba(0,0,0,0.2)";
+							            		};
+							          		})(f);
+							    
+							          		reader.readAsDataURL(f);
+							          	}
+						      		}	 
+
+						      		document.getElementById('chooser').addEventListener('change', handleFileSelect, false);
+							</script>
+						</div>
+					</div>
+					
+					<br><br>
+
+					<div id="details">									
+					
+						<input class="in" id="dp_name" type="text" name="dp_name" placeholder="Display Name"/><br><br>						
+						<input class="in" id="bio" type="text" name="bio" placeholder="Bio"s/><br><br>
+
+						<input id="save" type="submit" name="submit" onclick="return validateProfile()" value="Save"/>
+
+					</div>
+
+					</center>
+				</form>
+			</div>
+
+		</main>
+
+	</section>
+
+	<ul id="toolbar">	
+		<li id="title">Socialize</li>	
+	</ul>	
+
+</body>
+</html>	

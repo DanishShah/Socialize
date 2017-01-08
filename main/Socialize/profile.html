@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Socialize</title>
+
+	<script src="https://use.fontawesome.com/ce2f362aa8.js"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+	<style type="text/css">
+		:root{
+			--100: #FAFAFA;
+			--200: #F5F5F5;
+			--300: #EEEEEE;
+			--400: #E0E0E0;
+			--500: #616161;
+			--600: #212121;
+			
+		}
+		body{
+			background-color: var(--100);
+			padding: 0 ;
+			margin: 0 ;			
+		}
+
+		a{
+			text-decoration: none;
+			font-style: none;
+		}	
+		
+		#toolbar{	
+			position: fixed;		
+			overflow: hidden;
+			width: 100%;
+			list-style-type: none;
+			background-color: var(--200);
+			padding: 0;
+			margin: 0;
+			display: block;
+			box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+		}
+
+		.tool_items{
+			text-decoration: none;
+			float: right;
+			padding: 20px 16px;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.tool_items a{
+			color: var(--500);
+		}		
+
+		#title{
+			float:left;
+			padding: 5px 20px;
+			font-family: 'Pacifico', cursive;
+			font-size: 30px;	
+
+		}
+
+		#title a{
+			color: var(--500);
+		}
+
+		#search_item{
+			display: inline-block;
+			padding: 13px 10%;
+		}
+
+		#search{
+			border: none;
+			padding: 5px 10px;
+			font-family: 'Roboto', sans-serif;
+			border-radius: 3px;
+			width: 400%;
+			height: 30px;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+		}
+
+		main{
+			margin: auto;
+			width: 100%;
+			height: 100%;
+		}
+
+		#profile{
+			position: absolute;
+			width: 100%;
+			max-width: 1000px;
+			height: auto;
+			padding: 10px;
+			margin-top: 100px;
+		}
+
+		#profile_desc{
+			display: inline-block;
+		}
+
+		#prof_pic{
+			float: left;
+			width: 200px;
+			height: 200px;
+			padding: 0;
+			margin-right: 50px;
+			border-radius: 50%;
+			box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+		}
+
+		#name{
+			padding: 0;
+			margin: 0;
+			font-size: 35px;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		#bio{
+			padding: 0;
+			margin: 0;
+			font-size: 20px;
+			font-family: 'Roboto', sans-serif;
+			text-decoration: none;
+		}
+
+		#bio a{
+			color: var(--300);
+		}
+
+		li{
+			list-style-type: none;
+		}
+
+		#pics_container{
+			width: 100%;
+			max-width: 1000px;
+		}
+
+		.pics{
+			margin: 10px;
+			float: left;
+			width: 100%;
+			max-width: 300px;
+			display: inline-flex;
+		}
+
+	</style>
+</head>
+<body>
+
+	<section>
+
+	<main>
+	
+	<div id="profile">
+		<div id="profile_desc">
+			<img id="prof_pic" src="prof_pic.jpg">
+			<p id="name">Danish Shah</p>
+			<br>
+			<p id="bio">دانش شاه  Level 20 | Computer Geek | Developer | Designer | Snapchat da9ish_rox | Music lover | Gamer | <a href="http://ddev.carrd.co/">ddev.carrd.co</a></p>
+		</div>
+
+		<br><br><br>
+		<br><br><br>
+
+		<div>
+			<ul id="pics_container">
+				<li><img class="pics" src="prof_pic.jpg"></li>
+				<li><img class="pics" src="pic_1.jpg"></li>
+				<li><img class="pics" src="pic_2.jpg"></li>
+			</ul>
+		</div>
+	</div>
+
+	</main>
+
+	</section>	
+
+	<ul id="toolbar">
+			<li id="search_item"><input id="search" type="text" name="search" placeholder="Search"></li>
+			<li id="title"><a href="news_feed.html">Socialize</a></li>
+			<li class="tool_items"><a href="profile.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i></a></li>
+			<li class="tool_items"><a href="#notification"><i class="fa fa-bell-o fa-fw" aria-hidden="true"></i></a></li>
+	</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Socialize</title>
+		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+				
+		<script>			
+		
+			function passValidation(){
+				var pass1 = document.getElementById("pass").value;
+				var pass2 = document.getElementById("con_pass").value;
+				
+				if(pass1 != pass2){
+					document.getElementById("pass").style.backgroundColor = "#ff8a80";
+					document.getElementById("con_pass").style.backgroundColor = "#ff8a80";
+					return false;
+				} else{
+					return true;	
+				}
+			}
+
+			function emailValidation(){
+				var email = document.getElementById("email");
+				var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+				if(email.value.match(mailformat)){				  
+					return true;  
+				}else{  
+					email.style.backgroundColor = "#ff8a80";
+					return false;  
+				}  
+			}
+
+			function checkDetails(){
+				var u_name = document.getElementById("u_name").value;
+				var email = document.getElementById("email").value;
+				var pass1 = document.getElementById("pass").value;
+				var pass2 = document.getElementById("con_pass").value;
+
+				if(u_name != null && email != null && pass1 != null && pass2 != null){
+					return true;
+				}else{
+					return false;
+				}
+			}
+
+			function validateSignUp(){
+				if (checkDetails() && emailValidation() && passValidation()) {
+					document.getElementById("form").action = "/Socialize/include/create_account.php";
+				}
+			}
+
+			
+		</script>		
+		
+	<style>
+		:root{
+
+			--100: #FAFAFA;
+			--200: #F5F5F5;
+			--300: #EEEEEE;
+			--400: #E0E0E0;
+			--500: #616161;
+			--600: #212121;
+			--red: #ff8a80;
+			--green: #FF8A80;
+		}
+		body{
+			background-color: var(--200);
+		}
+		#socailize{
+			margin-top: 50px;
+			font-family: 'Pacifico', cursive;			
+			color: var(--500);
+			font-size: 50px;
+
+		}
+		#sign_up{
+
+			font-family: 'Open Sans', sans-serif;
+			color: var(--500);
+			font-size: 25px;
+
+		}
+
+		input[type="text"], textarea{
+			background-color: var(--100);
+		}
+
+		input[type="password"], textarea{
+			background-color: var(--100);
+		}
+		
+		.in{
+			border: none;
+			font-family: 'Open Sans', sans-serif;
+			padding: 10px;
+			width: 300px;
+			border-radius: 5px;
+		}
+		
+		#btn_sign_up{
+			background-color: var(--500);
+			font-family: 'Open Sans', sans-serif;
+			font-size: 16px;
+			color: var(--100);
+			border: none;
+			padding: 3px;
+			width: 100px;
+			height: 40px;
+			border-radius: 0px;
+		}		
+		
+		.in[placeholder]{
+			color: var(--400);
+			font-family: 'Open Sans', sans-serif;
+		}
+		
+		a{
+			font-size: 10px;
+			font-family: 'Open Sans', sans-serif;
+			color: var(--500);
+		}
+		
+		p{
+			font-size: 10px;
+			font-family: 'Open Sans', sans-serif;
+			color: var(--500);
+		}
+		
+	</style>
+	<head>
+
+	<body>
+		<center>
+		<p id="socailize">Socialize</p>
+		
+		<p id="sign_up">Create an Account by Signing Up</p>
+
+		
+		<form id="form" method="post">
+			<input class="in" id="u_name" type="text" name="username" placeholder="Username"/><br><br>
+			<input class="in" id="email" type="text" name="email" placeholder="Email ID"/><br><br>
+			<input class="in" id="pass" type="password" name="password" placeholder="Password"/><br><br>
+			<input class="in" id="con_pass" type="password" name="confirm_password" placeholder="Confirm Password"/><br><br><br><br>	
+			
+			<input id="btn_sign_up" type="submit" onclick="return validateSignUp()" value="Sign Up"/><br><br>
+		</form>
+
+		<br><br>	
+		
+		<p>By signing up you accept the 
+		<a href="tandc.html" target="_blank">Terms and Condition</a>
+		 of the website</p><br><br>
+
+		</center>
+	</body>
+</html>

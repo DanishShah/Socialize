@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Socialize</title>
+
+		<script src="https://use.fontawesome.com/ce2f362aa8.js"></script>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+		
+	<style>
+		:root{
+			
+			--100: #FAFAFA;
+			--200: #F5F5F5;
+			--300: #EEEEEE;
+			--400: #E0E0E0;
+			--500: #616161;
+			--600: #212121;
+			
+		}
+		body{
+			background-color: var(--100);
+			padding: 0 ;
+			margin: 0 ;			
+		}
+
+		a{
+			text-decoration: none;
+			font-style: none;
+		}	
+
+		#navbar{
+			max-width: 600px;
+			width: 100%;
+		}
+		
+		#toolbar{	
+			position: fixed;		
+			overflow: hidden;
+			width: 100%;
+			list-style-type: none;
+			background-color: var(--200);
+			padding: 0;
+			margin: 0;
+			display: block;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+		}
+
+		.tool_items{
+			text-decoration: none;
+			float: right;
+			padding: 20px 16px;
+			display: inline-flex;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.tool_items a{
+			color: var(--500);
+		}
+
+		.tool_items:hover{
+			background-color: var(--200);
+		}
+
+
+		#title{
+			float:left;
+			padding: 5px 20px;
+			margin: 0;
+			font-family: 'Pacifico', cursive;
+			font-size: 30px;	
+
+		}
+
+		#title a{
+			color: var(--500);
+		}
+
+		#search_item{
+			margin: auto;
+			display: inline-block;
+			padding: 13px 10%;
+		}
+
+		#search{
+			border: none;
+			padding: 5px 10px;
+			font-family: 'Roboto', sans-serif;
+			color: var(--500);
+			border-radius: 3px;
+			display: inline-flex;
+			width: 100%;
+			height: 30px;
+			box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+		}
+
+		#post_container{
+			width: 100%;
+			max-width: 600px;
+			align-content: space-around;
+			margin: auto;
+		}
+
+		#post{
+			position: absolute;
+			margin-top: 100px;
+			width: 100%;
+			max-width: 600px;
+			height: auto;
+			background-color: var(--50);
+			border-radius: 3px;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+		}
+
+		#post_header{
+			padding: 20px;
+			padding-bottom: 20px;
+		}
+
+		#prof_pic{
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			float: left;
+		}
+
+		#name_box{
+			display: inline-block;
+			margin-left: 20px;
+		}
+
+		#time{
+			display: inline-block;
+			float: right;
+			margin-right: 10px;
+			font-family: 'Roboto', sans-serif;
+			color: var(--500);
+		}
+
+		#name{
+			margin: 0;
+			font-size: 20px;
+			font-family: 'Roboto', sans-serif;
+			color: var(--500);
+		}
+
+		#location{
+			margin: 0;
+			font-size: 15px;
+			font-family: 'Roboto', sans-serif;
+			color: var(--500);
+		}
+
+		#post_pic{
+			display: inline-block;
+			width: 100%;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+			
+		}
+
+		#post_activity{
+			padding-left: 5%;
+			padding-right: 5%;
+		}
+
+		#like_container{
+			padding: 10px;
+			padding-top: 20px;
+		}
+
+		#like_count{
+			font-family: 'Roboto', sans-serif;
+			color: var(--500);
+			margin: 0;
+		}
+
+		#comments{
+			list-style-type: none;
+			padding: 0;
+			margin-bottom: 10;
+		}
+
+		.caption{
+			font-family: 'Roboto', sans-serif;
+			color: var(--500);
+		}
+
+		a{
+			text-decoration: none;
+			color: var(--500);
+		}
+
+		.comment{
+			font-family: 'Roboto', sans-serif;
+			color: var(--500);
+		}
+
+		li{
+			padding: 5px;
+		}
+		
+		#post_footer{
+			border-top: 1px solid var(--500);
+			padding-top: 10px;
+			height: auto;
+		}
+
+		#like_button{
+			display: inline-block;
+			float: left;
+			margin-right: 10px;
+			margin: 5px;
+		}			
+
+		#comment_box {
+			display: inline-block;
+			height: auto;
+			background-color: var(--100);
+			border: none;
+		}
+
+
+	</style>
+	</head>
+
+	<body>	
+		
+		<section>
+
+			<main id="post_container">
+		
+			<div id="post">
+				<header id="post_header">
+					<a href="profile.html"><img id="prof_pic" src="prof_pic.jpg"></a>					
+					<div id="name_box">
+					<p id="name" >Danish Shah</p>
+					<p id="location">Mumbai, India</p>
+					</div>
+					<p id="time">16m</p>
+				</header>
+				<div>
+					<img id="post_pic" src="prof_pic.jpg">				
+				</div>
+
+				<div id="post_activity">
+					<section>
+						<div id="like_container">
+							<p id="like_count"><b>102 likes</b></p>
+						</div>
+					</section>
+
+					<ul id="comments">
+						<li class="caption"><a href="profile.html"><b>da9ish</b></a> Caption with some #hastags </li>
+						<li class="comment"><b>shaikh_rafi_9</b> Some cheap comments :P</li>
+					</ul>
+
+					<section>
+						<div id="post_footer">
+							<div id="like_button">
+								<i class="fa fa-heart-o fa-2x"></i>
+							</div>							
+							<input id="comment_box" type="text" name="comment" placeholder="Add a comment...">
+							
+						</div>
+					</section>
+				</div>
+
+			</div>
+			</main>
+
+		 </section>
+
+		 <nav>
+		 	<section id="navbar">		
+				<ul id="toolbar">
+					<li id="search_item"><input id="search" type="text" name="search" placeholder="Search"></li>
+					<li id="title"><a href="news_feed.html">Socialize</a></li>
+					<li class="tool_items"><a href="profile.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i></a></li>
+					<li class="tool_items"><a href="#notification"><i class="fa fa-bell-o fa-fw" aria-hidden="true"></i></a></li>
+				</ul>
+			</section>
+		</nav>
+	</body>
+</html>
