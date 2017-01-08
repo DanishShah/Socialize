@@ -1,7 +1,7 @@
 # Socialize
 A Social Networking Website made as a college project. There are lot of functions to be implemented. I might work on this project in future.
 
-<a href="www.socialize.16mb.com" target="blank">Check out the website</a>
+[Check out the website](http://www.socialize.16mb.com)
 
 # Functions
 * Login/Sign up.
